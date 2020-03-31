@@ -25,6 +25,8 @@ function prepareData(data) {
     cows.push(object.numberOfCows);
     years.push(object.year);
   }
+  console.log(cows);
+  console.log(years);
 
   return {
     cows,
@@ -34,7 +36,7 @@ function prepareData(data) {
 
 function appendChart(data) {
   let chartData = prepareData(data);
-  console.log(chartData);
+  // console.log(chartData);
 
   // generate chart
   let chartContainer = document.getElementById('chart');
