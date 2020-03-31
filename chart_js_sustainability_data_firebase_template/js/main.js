@@ -34,8 +34,8 @@ function appendCows(sustainabilityData) {
   console.log(data);
 
   // generate chart
-  let chart = document.querySelector('#cows');
-  let myDoughnutChart = new Chart(chart, {
+  let chartContainer = document.querySelector('#cows');
+  let chart = new Chart(chartContainer, {
     type: 'bar',
     data: {
       datasets: [{
@@ -84,8 +84,8 @@ function appendCarbonFootprint(sustainabilityData) {
   console.log(data);
 
   // generate chart
-  let chart = document.querySelector('#carbonFootprint');
-  let myDoughnutChart = new Chart(chart, {
+  let chartContainer = document.querySelector('#carbonFootprint');
+  let chart = new Chart(chartContainer, {
     type: 'line',
     data: {
       datasets: [{
@@ -125,8 +125,8 @@ function appendMilkProduction(sustainabilityData) {
   console.log(data);
 
   // generate chart
-  let chart = document.querySelector('#milkProduction');
-  let myDoughnutChart = new Chart(chart, {
+  let chartContainer = document.querySelector('#milkProduction');
+  let chart = new Chart(chartContainer, {
     type: 'line',
     data: {
       datasets: [

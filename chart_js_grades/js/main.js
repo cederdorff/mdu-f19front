@@ -61,8 +61,8 @@ function prepareData(data) {
 // 3: create and append the chart
 function appendChart(data) {
   // generate chart
-  let chart = document.getElementById('chart');
-  let myDoughnutChart = new Chart(chart, {
+  let chartContainer = document.getElementById('chart');
+  let chart = new Chart(chartContainer, {
     type: 'doughnut',
     data: {
       labels: data.labels,

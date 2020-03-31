@@ -37,8 +37,8 @@ function appendChart(data) {
   console.log(chartData);
 
   // generate chart
-  let chart = document.getElementById('chart');
-  let myDoughnutChart = new Chart(chart, {
+  let chartContainer = document.getElementById('chart');
+  let chart = new Chart(chartContainer, {
     type: 'line',
     data: {
       datasets: [{

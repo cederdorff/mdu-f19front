@@ -51,13 +51,11 @@ function prepareData(data) {
 
 // 3: create and append the chart
 function appendChart(salesData) {
-  let chartContainer = document.getElementById('chartContainer');
-
   // using prepareData() to get the excact data we want
   let data = prepareData(salesData);
   //open the developer console to inspect the result
   console.log(data);
-
+  let chartContainer = document.getElementById('chartContainer');
   let chart = new Chart(chartContainer, {
     // The type of chart we want to create
     type: 'line',

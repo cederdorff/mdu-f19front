@@ -81,8 +81,6 @@ function prepareData(data) {
 
 // 3: create and append the chart
 function appendChart() {
-  let chartContainer = document.getElementById('chartContainer');
-
   // using prepareData() to get the excact data we want
   let data2018 = prepareData(_salesData2018);
   let data2019 = prepareData(_salesData2019);
@@ -90,7 +88,7 @@ function appendChart() {
   console.log(data2018);
   console.log(data2019);
 
-
+  let chartContainer = document.getElementById('chartContainer');
   let chart = new Chart(chartContainer, {
     // The type of chart we want to create
     type: 'line',
