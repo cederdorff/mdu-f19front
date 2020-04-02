@@ -8,7 +8,8 @@ export default class ChartComparePage {
 
   async init() {
     // user 1 - auth user 
-    let uid = authService.authUser.uid;
+    // let = authService.authUser.uid;
+    let uid = "j7WsepsaogO7mvb2S35LEfdQLmq1"; // using a fixed uid - want to make sure there's data matching an uid in the database
     let data = await sustainabilityDataService.getPreparedDataByUid(uid); // getting prepared data from the service
     // user 2 - Ep7o7EToQtZzdKnEDy2ahirFHc43
     let uidCompare = "Ep7o7EToQtZzdKnEDy2ahirFHc43"; // matching an uid from the database

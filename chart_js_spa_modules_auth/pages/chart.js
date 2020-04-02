@@ -8,7 +8,8 @@ export default class ChartPage {
   }
 
   async init() {
-    let uid = authService.authUser.uid;
+    // let = authService.authUser.uid;
+    let uid = "j7WsepsaogO7mvb2S35LEfdQLmq1"; // using a fixed uid - want to make sure there's data matching an uid in the database
     let data = await sustainabilityDataService.getPreparedDataByUid(uid); // getting prepared data from the service
     // call append functions with the dataset: data
     this.appendCowsChart(data);
