@@ -45,7 +45,7 @@ export default class ChartComparePage {
       data: {
         datasets: [{
             data: data.numberOfCows,
-            label: 'Number of Cows',
+            label: 'User: AuthUser',
             fill: false,
             borderColor: "#e755ba",
             backgroundColor: "#e755ba",
@@ -82,7 +82,7 @@ export default class ChartComparePage {
       data: {
         datasets: [{
             data: data.carbonFootprint,
-            label: 'Carbon Footprint WholeFarm',
+            label: 'User: AuthUser',
             fill: false,
             borderColor: "#e755ba",
             backgroundColor: "#e755ba",
@@ -121,7 +121,7 @@ export default class ChartComparePage {
           // first dataset - auth user
           {
             data: data.milkProduction,
-            label: 'User: authUser',
+            label: 'User: AuthUser',
             fill: false,
             borderColor: "#e755ba",
             backgroundColor: "#e755ba",
