@@ -1,0 +1,248 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+body {
+    font: 12px/18px "TrebuchetMS", Helvetica, Verdana, sans-serif;
+    /*XXX*/
+    background-color: rgb(219, 196, 240);
+}
+
+:root {
+
+    --imgRadius: 10px;
+    --inputRadius: 3px;
+
+    --green: #5a8170;
+}
+
+h2 {
+    font-size: 3em;
+    text-align: center;
+    padding: 1em 0;
+}
+
+b {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+
+    font-weight: bold;
+    color: #42032d;
+}
+
+.textCollection {
+    padding: 1.5em 0;
+}
+
+
+
+/* Header
+.........................................................................*/
+
+
+
+/* Main
+.........................................................................*/
+#flexPersons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.profile {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile img:hover {
+    animation: in .4s linear 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.profile div {
+    width: 50%;
+}
+
+.profile div {
+    width: 100%;
+    text-align: center;
+}
+
+.profile .imgDiv {
+    overflow: hidden;
+}
+
+.profile .imgDiv div {
+    overflow: hidden;
+}
+
+.profile img {
+    animation: out .4s linear 1;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    border-radius: var(--imgRadius);
+    margin: 0 auto;
+}
+
+@keyframes in {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes out {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+label {
+    font-weight: bold;
+    width: 45%;
+    margin: 0 auto;
+}
+
+input,
+select {
+    width: 45%;
+    margin-bottom: 2em;
+    border-radius: var(--inputRadius);
+    border: none;
+    margin: .5em auto;
+}
+
+input[placeholder] {
+    padding-left: 1em;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 1em;
+}
+
+.displayNone {
+    display: none;
+}
+
+.visibilityHidden {
+    visibility: hidden;
+}
+
+#filterInputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[for="filterBtn"] {
+    width: 95%;
+    margin: 1em auto 3em;
+    border: none;
+    padding: 0.3em 0;
+    text-align: center;
+    background-color: var(--green);
+    border-radius: var(--inputRadius);
+    cursor: pointer;
+}
+
+
+#detailView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--green);
+    display: none;
+}
+
+#detailView .line {
+    height: 35%;
+    width: 100%;
+    background-color: #F9F8Fa;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#detailView button {
+    margin: 2em 12.5% 0;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    border-radius: var(--imgRadius);
+}
+
+#theDetailView {
+    width: 80%;
+    position: absolute;
+    left: 12.5%;
+    top: 25%;
+}
+
+#theDetailView img {
+    float: right;
+    border-radius: var(--imgRadius);
+}
+
+#theDetailView h2 {
+    font-size: 2em;
+    line-height: 1em;
+    padding: 0;
+}
+
+#theDetailView p {
+    clear: both;
+}
+
+/* Footer
+.........................................................................*/
+
+
+
+
+/* @media query! Skærme over 720px
+..................................................................*/
+@media only screen and (min-width: 720px) {
+    body {
+        background-color: rgb(243, 216, 250);
+    }
+
+    main {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .profile {
+        width: 25%;
+    }
+}
