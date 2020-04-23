@@ -1,0 +1,81 @@
+/* Load Arla Fonts */
+/* Arla Bold Font Face */
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaifbd.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaifbd.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaifbd.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaifbd.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaifbd.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaifbd.woff") format("woff"),
+    /* Modern Browsers */
+    url("../fonts/arlaifbd.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Arla Normal Font Face */
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaifrg.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaifrg.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaifrg.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaifrg.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaifrg.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaifrg.woff") format("woff"),
+    /* Modern Browsers */
+    url("../fonts/arlaifrg.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Arla Light Font Face */
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaiflt.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaiflt.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaiflt.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaiflt.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaiflt.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaiflt.woff") format("woff"),
+    /* Modern Browsers */
+    url("../fonts/arlaiflt.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Using the fonts */
+html, body {
+  font-family: 'Arla', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}

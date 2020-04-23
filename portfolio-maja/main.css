@@ -1,0 +1,1042 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('./styles/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --colorTable: rgb(252, 233, 170);
+  --colorSofa: rgb(153, 153, 153);
+
+  --colorFrameBorder: rgba(192, 136, 134, 1);
+  --colorFrameFill: rgba(248, 172, 136, 0.5);
+  --colorFrameHighlight: rgb(255, 255, 196);
+  --colorPillow: rgb(1, 70, 58);
+  --colorNone: rgba(255, 255, 255, 0);
+
+  --colorLampBorder: rgb(255, 186, 58);
+
+  --colorDarkText: #111;
+  --colorLightText: #eee;
+  --colorTextLink: var(--colorLampBorder);
+
+  --colorTransparentDark: rgba(0, 0, 0, 0.56);
+  --colorTransparentLight: rgba(255, 255, 255, .9);
+
+  --colorHTMLBackground: rgb(238, 252, 238);
+}
+
+
+/* ---------- general styling ---------- */
+html {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+h1,
+.signAndText p,
+button,
+#headlineSign p {
+  font-size: 1em;
+  color: var(--colorDarkText);
+  /* font-weight: 300; */
+  letter-spacing: 3px;
+  display: inline;
+
+}
+
+#signText {
+  width: 8em;
+  position: fixed;
+  top: 3.2em;
+  left: 3em;
+  z-index: 2;
+}
+
+.signAndText,
+#headlineSign {
+  /* position: fixed;
+  bottom: 2.2em;
+  left: 5%; */
+  /* width: 100%;  */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--colorFrameFill);
+}
+
+.signAndText {
+  height: 0;
+}
+
+#signPrevious,
+#signNext {
+  width: 80%;
+  margin: 0 auto;
+
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+.svgSign {
+  position: fixed;
+  width: 8em;
+  top: -3em;
+  left: 3em;
+  z-index: 1;
+}
+
+.svgSignPrev {
+  position: fixed;
+  width: 8em;
+  top: -3em;
+  left: 12em;
+  z-index: 1;
+}
+
+.svgSignNext {
+  position: fixed;
+  width: 8em;
+  top: -3em;
+  right: 3em;
+  z-index: 1;
+}
+
+.sign {
+  fill: rgb(14, 14, 14);
+  /* stroke: rgb(15, 14, 14); */
+
+}
+
+.signBackground {
+  /* fill: rgb(252, 233, 170); */
+  fill: var(--colorTable);
+}
+
+h2 {
+  display: block;
+  width: 100%;
+  color: var(--colorDarkText);
+}
+
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+a {
+  color: var(--colorTextLink);
+  /* border: var(--colorDarkText); */
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  /* background: var(--colorTextLink);
+  padding: 1em;
+  border-radius: 25px;
+  margin: 2em; */
+}
+
+
+/* Style the links inside the navigation bar */
+.frames h2 {
+  /* display: inline-block; */
+
+  color: var(--colorDarkText);
+  /* text-align: center; */
+
+  text-decoration: none;
+
+  font-size: .5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  position: absolute;
+  bottom: .4em;
+  z-index: 5;
+}
+
+/* p {
+  max-width: 200px;
+} */
+
+
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  /* min-height: calc(100vh - 110px); */
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 0;
+  /* width: 100%; */
+}
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* ---------- loader styling ---------- */
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  overflow: hidden;
+  background: var(--loader-background-color);
+  text-align: center;
+}
+
+.spinner {
+  border: 5px solid var(--light-grey);
+  border-radius: 50%;
+  border-top: 5px solid var(--light-green);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+html {
+  background-color: var(--colorHTMLBackground);
+}
+
+body {
+  margin: 0 auto;
+}
+
+html,
+body {
+  text-align: center;
+  z-index: -5;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: start;
+
+}
+
+.gridcontainer {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.relativeContainer {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* z-index: -5; */
+}
+
+.fixedBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* z-index: -5; */
+}
+
+.placeInBack {
+  z-index: -10;
+}
+
+#bigFrameButtom {
+  z-index: 99999;
+}
+
+.placeInFront {
+  z-index: 99999;
+}
+
+
+
+.frames {
+  position: relative;
+  /* width: 8em; */
+  width: 30%;
+  margin: 0 1.5%;
+  /* height: 8em; */
+
+  height: auto;
+  background-color: var(--colorFrameFill);
+
+  color: var(--colorDarkText);
+  cursor: pointer;
+  /* transition: 0.5s; */
+  /* border: 2px solid darkslategray; */
+  /* box-shadow: 0px -2px 5px rgb(0, 0, 0); */
+}
+
+.frame_ {
+  width: 150%;
+}
+
+
+
+#frame_1 {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+.frames svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+
+}
+
+.frames svg .st1 {
+  stroke: #000;
+  stroke-width: 4;
+  transition: 1.5s;
+  /* stroke-dasharray: 200; */
+  /* stroke-dashoffset: 200; */
+}
+
+
+
+.pageFrame {
+
+  /* z-index: -2; */
+  padding-top: 7em;
+}
+
+
+.lampImg {
+  width: 30%;
+  margin: 0 1.5%;
+  /* z-index: -5; */
+  overflow: hidden;
+  position: relative;
+}
+
+
+.lampImg svg {
+  width: 25%;
+  height: 100%;
+
+
+}
+
+.glow {
+  border-radius: 150px;
+  width: 25%;
+  margin: 0 auto;
+  height: 15%;
+  /* background: radial-gradient(rgb(255, 255, 163) 10%, white 85%); */
+  position: absolute;
+  transform: translateX(150%);
+  bottom: 3px;
+  box-shadow: 0px 0px 40px rgb(250, 225, 81);
+
+}
+
+.lamps {
+  opacity: 0;
+  animation: fadeIn 3s ease-in;
+  animation-fill-mode: forwards;
+
+}
+
+
+
+
+
+
+.lampBulb {
+  fill: rgba(250, 225, 81, 0.288);
+  fill: none;
+}
+
+.lampBorder {
+  fill: var(--colorLampBorder);
+  stroke: var(--colorLampBorder);
+}
+
+.lampFilament {
+  fill: var(--colorLampBorder);
+  fill: #333;
+}
+
+.lampSuspension {
+  fill: #333;
+}
+
+
+
+.highlightFrame {
+
+  background: radial-gradient(farthest-side at 50% -10%, var(--colorFrameHighlight) 1%, var(--colorFrameFill) 100%);
+  color: var(--colorDarkText);
+}
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+
+  /* top: -4em; */
+}
+
+#lampsAndFrames {
+
+  justify-content: space-between;
+}
+
+video {
+  height: auto;
+  width: 100%;
+
+  opacity: 0;
+  animation: videoFadeIn 1s ease-in;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes videoFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+#sofa,
+#table,
+#pillow {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* fill: #fff; */
+}
+
+button {
+  width: auto;
+  padding: .5em 1.5em;
+  /* position: absolute;
+  bottom: 22.5%;
+  right: 15%; */
+  z-index: 15;
+  background-color: var(--colorFrameFill);
+  border: 5px solid var(--colorFrameFill);
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: .8em;
+}
+
+
+.st0,
+.st1 {
+  /* fill: rgb(1, 70, 58); */
+  stroke: #000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.wrapper .changeBtn {
+  fill: var(--colorFrameFill);
+  stroke: var(--colorDarkText);
+}
+
+.frameOutline,
+.frameOutlineS {
+  /* fill: rgb(255, 217, 0); */
+  stroke: #000;
+  fill: transparent;
+  /* width: 100%; */
+
+
+}
+
+.frameBackground,
+.frameBackgroundS {
+  stroke: none;
+  fill: transparent;
+}
+
+.frameCorners,
+.frameCornersS {
+  stroke: #000;
+  /* transition: 1.5s; */
+  fill: transparent;
+
+}
+
+.frameBorders,
+.frameBordersS {
+  /* stroke: rgb(0, 0, 0); */
+  fill: var(--colorFrameBorder);
+  opacity: 10;
+  stroke: #000;
+}
+
+#floor {
+  /* background-color: #5e330ec2;
+  background-color: #a57f5f;
+  background-color: #dab08e; */
+  /* background-color: #e9ba949f;
+  background-color: #e9ba94;
+  background-color: #f7d5ba;
+  background-color: #f3cdae; */
+  background-color: #fdcea8;
+
+  width: 100%;
+  /* height: 42%; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+}
+
+
+
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: rgb(1, 70, 58);
+    /* fill: rgb(153, 153, 153); */
+    fill: var(--colorSofa);
+  }
+}
+
+@keyframes animatebtn {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: var(--colorFrameFill);
+  }
+}
+
+
+@keyframes animatelegs {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: rgb(1, 70, 58);
+    /* fill: rgb(252, 233, 170);*/
+    fill: var(--colorTable);
+  }
+}
+
+@keyframes animatepillow {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: var(--colorPillow);
+
+  }
+}
+
+@keyframes animatetable {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: var(--colorTable);
+  }
+}
+
+@keyframes animates {
+  0% {
+    opacity: 0;
+    fill: var(--colorNone);
+  }
+
+  30% {
+    opacity: 10;
+  }
+
+  50% {
+    fill: var(--colorNone);
+  }
+
+  100% {
+    opacity: 10;
+    fill: var(--colorFrameBorder);
+  }
+}
+
+
+
+
+
+.projects {
+  width: 100%;
+  border: 1px solid var(--colorFrameBorder);
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects img {
+  max-width: 100%;
+  margin: auto;
+}
+
+.projects div {
+  position: absolute;
+  bottom: 0;
+  /* top: 0; */
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects div p {
+  background-color: var(--colorTransparentDark);
+  position: absolute;
+  font-size: 1em;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  bottom: 0;
+  padding: 0.5em 0em;
+  visibility: hidden;
+  z-index: 2;
+  color: var(--colorLightText);
+  font-weight: bolder;
+
+}
+
+
+@keyframes scaleproject {
+
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes ondoscaleproject {
+
+  from {
+    transform: scale(1.2)
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.projects img {
+  max-width: 100%;
+}
+
+.modal {
+  /* display: none; */
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--colorTransparentDark);
+  z-index: 999999;
+  overflow: hidden;
+}
+
+.modal div {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .95);
+  border: 1px solid var(--colorDarkText);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.modal div h2,
+.modal div article p {
+  color: var(--colorDarkText);
+  text-align: left;
+  padding: 0;
+  margin: 0 0 1em;
+}
+
+
+.modal li {
+  color: var(--colorDarkText);
+  text-align: left;
+}
+
+.modal div article {
+  width: 40%;
+  width: 90%;
+  margin: 0 0 1em;
+
+
+}
+
+.modal img {
+  width: 50%;
+  height: 50%;
+}
+
+.exit {
+  width: 100%;
+  text-align: right;
+  padding-right: 2em;
+  color: var(--colorDarkText);
+  height: 1em;
+  cursor: pointer;
+}
+
+
+.width100 {
+  width: 100%;
+}
+
+
+
+#contact img,
+#about img {
+
+  /* width: 60%; */
+  height: 20vh;
+  /* max-width: 1473px; */
+  /* height: auto; */
+
+  /* display: inline; */
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  /* transform: translate(50%, 0); */
+  z-index: -10000;
+}
+
+#contact div,
+#about div {
+  text-align: left;
+  max-width: 540px;
+}
+
+@media only screen and (min-width: 300px) {
+
+  .frames h2 {
+    font-size: 0.6em;
+  }
+
+}
+
+@media only screen and (min-width: 460px) {
+
+
+  .signAndText {
+    position: fixed;
+    bottom: 2.2em;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: transparent;
+  }
+
+  #signPrevious,
+  #signNext {
+    width: 45%;
+    margin: 0 10px;
+    padding: .1em 1em;
+  }
+
+  .frames h2 {
+    font-size: 0.7em;
+    bottom: 1em;
+  }
+
+  #lampsAndFrames {
+    margin-top: -3em;
+  }
+}
+
+@media only screen and (min-width: 645px) {
+  #home {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+
+  .infoImg {
+    width: 100%;
+  }
+
+  .infoText {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .infoText section {
+    width: 45%;
+  }
+
+  .projects {
+    width: 100%;
+  }
+
+  #signPrevious,
+  #signNext {
+    width: 35%;
+    padding: .1em .5em;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 800px) {
+
+  #home {
+    width: 65%;
+  }
+
+  .infoImg {
+    width: 100%;
+  }
+
+  .infoText {
+    width: 100%;
+  }
+
+  .infoText section {
+    width: 45%;
+  }
+
+  .projects {
+    width: 49%;
+  }
+
+
+  #signPrevious,
+  #signNext {
+    width: 27%;
+  }
+
+  .frames h2 {
+    font-size: 0.8em;
+    bottom: 1em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #home {
+    width: 90%;
+  }
+
+  .infoText section {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  .modal div .infoText,
+  .modal div .infoImg {
+    width: 45%;
+  }
+
+  #signPrevious,
+  #signNext {
+    width: 20%;
+  }
+
+  #lampsAndFrames {
+    margin-top: -5em;
+  }
+
+}
+
+@media only screen and (min-width: 1100px) {
+  #home {
+    width: 50%;
+  }
+
+  .projects {
+    width: 33.1%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  #home {
+    width: 41%;
+  }
+
+  #signPrevious,
+  #signNext {
+    width: 17%;
+  }
+
+  #lampsAndFrames {
+    margin-top: 0em;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  #home {
+    width: 21%;
+  }
+
+  #signPrevious,
+  #signNext {
+    width: 17%;
+  }
+
+  #lampsAndFrames {
+    margin-top: 0em;
+  }
+}

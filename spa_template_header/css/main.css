@@ -51,8 +51,6 @@ header {
   background-color: var(--green);
 }
 
-.img-col {}
-
 .img-col img {
   max-width: 200px;
   margin: 0;
