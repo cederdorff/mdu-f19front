@@ -4,7 +4,7 @@ import authService from "../services/auth.js";
 export default class ChartPage {
   constructor() {
     this.template();
-
+    this.numberOfCowsChart;
   }
 
   async init() {
@@ -25,6 +25,25 @@ export default class ChartPage {
         </header>
         <h3>Herd - Number of Cows</h3>
         <canvas id="cows"></canvas>
+
+        <label for="fromYear">From:</label>
+        <select id="fromYear" onchange="yearChanged(this.value, toYear.value)">
+          <option value="2014" selected>2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
+
+        <label for="toYear">To:</label>
+        <select id="toYear" onchange="yearChanged(fromYear.value, this.value)">
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018" selected>2018</option>
+        </select>
+
         <h3>Carbon Footprint</h3>
         <canvas id="carbonFootprint"></canvas>
         <h3>Milk Production pr cow</h3>
@@ -37,7 +56,7 @@ export default class ChartPage {
   appendCowsChart(data) {
     // generate chart
     let chartContainer = document.getElementById("cows");
-    let chart = new Chart(chartContainer, {
+    this.numberOfCowsChart = new Chart(chartContainer, {
       type: 'line',
       data: {
         datasets: [{
@@ -64,6 +83,20 @@ export default class ChartPage {
         }
       }
     });
+  }
+
+  updateCowChartAxes(min, max) {
+    this.numberOfCowsChart.options = {
+      scales: {
+        xAxes: [{
+          ticks: {
+            min: min,
+            max: max
+          }
+        }]
+      }
+    }
+    this.numberOfCowsChart.update();
   }
 
   //appending the chart

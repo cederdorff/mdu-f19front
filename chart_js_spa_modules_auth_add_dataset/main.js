@@ -33,3 +33,4 @@ window.logout = () => profilePage.logout();
 window.updateUser = () => profilePage.updateUser();
 window.previewImage = (file, previewId) => profilePage.previewImage(file, previewId);
 window.addDataset = () => chartAddPage.addDataset();
+window.yearChanged = (fromYear, toYear) => chartPage.updateCowChartAxes(fromYear, toYear);
