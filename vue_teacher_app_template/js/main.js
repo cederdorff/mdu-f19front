@@ -7,17 +7,17 @@ let app = new Vue({
       name: "Birgitte Kirk Iversen",
       mail: "bki@baaa.dk",
       position: "Senior Lecturer",
-      img: "https://www.baaa.dk/CropUp/headshot/media/1524902/birgitte-kirk-iversen.jpg"
+      img: "https://www.eaaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132301335231430000&format=webp"
     }, {
-      name: "Gertie Margrethe Kolding Jensen",
-      mail: "gkj@baaa.dk",
-      position: "Senior Lecturer",
-      img: "https://www.eaaa.dk/CropUp/headshot/media/2046228/Gertie-Kolding.jpg"
+      name: "Lykke Dahlén",
+      mail: "lyda@baaa.dk",
+      position: "Lecturer",
+      img: "https://www.eaaa.dk/media/vk5evkad/lykke-dahlen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132301335291100000&format=webp"
     }, {
       name: "Kim Elkjær Marcher-Jepsen",
       mail: "kije@baaa.dk",
       position: "Lecturer",
-      img: "https://www.baaa.dk/CropUp/headshot/media/3124373/Kim-Elkjaer-Marcher-Jepsen.jpg"
+      img: "https://www.eaaa.dk/media/3zihz21l/kim-elkjaer-marcher-jepsen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132301335276900000&format=webp"
     }],
     newTeacher: {
       name: "",
@@ -28,7 +28,10 @@ let app = new Vue({
   },
   methods: {
     addNewTeacher() {
+      // add this.newTeacher to this.teachers
       this.teachers.push(this.newTeacher);
+      // clear the this.newTeacher object
+      this.newTeacher = {};
     }
   }
 });
