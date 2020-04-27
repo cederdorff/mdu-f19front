@@ -14,11 +14,20 @@
 <body>
   <!-- Vue App Start -->
   <div id="app">
-    <h1>{{ message }} </h1>
-    <button v-on:click="changeMessage">Hit me</button>
 
-    <h2>{{text}}</h2>
-    <input v-model="text">
+    <h1>Todo</h1>
+
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+
+    Number of todos: {{numberOfTodos}}
+
+    <input v-model="newTodo.text" placeholder="Type new todo">
+    <button type="button" v-on:click="addTodo">Add</button>
+
   </div>
   <!-- Vue App End -->
   <!-- Vue.js, development version, includes helpful console warnings -->

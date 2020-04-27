@@ -7,7 +7,7 @@ let app = new Vue({
     text: 'Tryout the double databinding!'
   },
   methods: {
-    reverseMessage() {
+    changeMessage() {
       this.message = 'Vue is awesome!'
     }
   }

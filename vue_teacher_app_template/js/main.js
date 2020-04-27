@@ -29,9 +29,7 @@ let app = new Vue({
   methods: {
     addNewTeacher() {
       // add this.newTeacher to this.teachers
-      this.teachers.push(this.newTeacher);
       // clear the this.newTeacher object
-      this.newTeacher = {};
     }
   }
 });

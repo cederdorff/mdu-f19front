@@ -14,7 +14,6 @@ html {
   height: 100%;
   width: 100%;
   font-weight: 200;
-  text-align: center;
 }
 
 h1 {
@@ -23,15 +22,9 @@ h1 {
   letter-spacing: 3px;
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: 300;
-  letter-spacing: 3px;
-}
-
 /* ---------- input form styling ---------- */
 input {
-  margin: 1em auto;
+  margin: 1em 0;
   width: 100%;
   max-width: 300px;
   padding: 12px 15px;
