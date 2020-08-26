@@ -10,14 +10,14 @@ let teachers = [{
     department: "Multimedia Design",
     img: "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg"
   }, {
-    name: "Gertie Margrethe Kolding Jensen",
-    initials: "gkj",
-    mail: "gkj@baaa.dk",
-    phone: "72286349",
-    address: "Sønderhøj 30, 8260 Viby J",
-    position: "Lecturer",
+    name: "Maria Louise Bendixen",
+    initials: "mlbe",
+    mail: "mlbe@baaa.dk",
+    phone: "72286345",
+    address: "Ringvej Syd 104, 8260 Viby J",
+    position: "Senior Lecturer",
     department: "Multimedia Design",
-    img: "https://www.baaa.dk/media/iabpvdga/gertie-kolding.jpg"
+    img: "https://www.baaa.dk/media/b5ahrlra/maria-louise-bendixen.jpg"
   }, {
     name: "Kim Elkjær Marcher-Jepsen",
     initials: "kije",
