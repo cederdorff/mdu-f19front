@@ -32,7 +32,7 @@ function appendProducts(products) {
   let htmlTemplate = "";
   for (let product of products) {
     console.log(product);
-    htmlTemplate += `
+    htmlTemplate += /*html*/ `
       <article>
         <img src="${product.img}">
         <h2>${product.model}</h2>
